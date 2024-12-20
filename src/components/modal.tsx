@@ -110,8 +110,8 @@ export function Modal({ isOpen, onClose }: ModalProps) {
                 className="rounded-full"
               />
             </div>
-            Jane may be interested in upgrading espresso machines for her
-            in-store coffee shops.
+            Jane may be interested in upgrading espresso machines for her in
+            store coffee shops.
           </div>
           <div className="flex items-center gap-2">
             <Button variant="ghost" size="sm" className="text-blue-700">
@@ -172,24 +172,27 @@ export function Modal({ isOpen, onClose }: ModalProps) {
                   <span className="text-xs bg-gray-100 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     1
                   </span>
-                  Jane is a{" "}
+                  Jane is a
                   <span className="font-semibold">key decision maker</span> and
-                  was browsing{" "}
-                  <span className="font-semibold">'espresso machines'</span> on
-                  First Coffee's website.
+                  was browsing
+                  <span className="font-semibold">
+                    '&apos;espresso machines&apos;'
+                  </span>{" "}
+                  on First Coffee&apos;s website.
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-xs bg-gray-100 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     2
                   </span>
-                  Multiple people at her company have reported 'slowness' during{" "}
+                  Multiple people at her company have reported
+                  '&apos;slowness&apos;' during
                   <span className="font-semibold">service requests</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-xs bg-gray-100 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     3
                   </span>
-                  Northwind Traders currently see{" "}
+                  Northwind Traders currently see
                   <span className="font-semibold">$200M in revenue</span> from
                   their in-store coffee shops.
                 </li>
@@ -288,8 +291,8 @@ export function Modal({ isOpen, onClose }: ModalProps) {
               Jane Reyes, the Chief Operating Officer of Northwind Traders, is a
               dynamic leader with a proven track record in optimizing operations
               and enhancing customer experiences. Under her guidance, Northwind
-              Traders' in-store coffee shops have flourished, becoming a
-              hallmark of quality and innovation. Jane's commitment to
+              Traders&apos;' in-store coffee shops have flourished, becoming a
+              hallmark of quality and innovation. Jane&apos;'s commitment to
               excellence makes her an ideal partner for First Coffee. She is
               always seeking top-tier equipment to elevate her coffee shops'
               offerings, ensuring consistent, high-quality service.

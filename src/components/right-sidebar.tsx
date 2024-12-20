@@ -27,7 +27,7 @@ export function RightSidebar() {
             Fabrikam • $1,000,000 • 15 days to close
           </p>
           <Button variant="outline" className="w-full justify-between">
-            Prepare me for Fabrikam's key stakeholder meeting
+            Prepare me for Fabrikam&apos;s key stakeholder meeting
             <ChevronRight className="h-4 w-4" />
           </Button>
         </CardContent>
