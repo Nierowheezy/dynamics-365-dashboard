@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -34,6 +34,12 @@ import {
   PieChart,
 } from "lucide-react";
 import AgentSkillMenu from "./AgentSkillMenu";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 interface NavItem {
   icon: React.ElementType;
@@ -102,6 +108,20 @@ export function LeftSidebar() {
   const pathname = usePathname();
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
   const [showAgentSkillMenu, setShowAgentSkillMenu] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsCollapsed(window.innerWidth < 1024);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const toggleSection = (label: string) => {
     setOpenSections((prev) => ({
@@ -115,7 +135,7 @@ export function LeftSidebar() {
     level = 0
   ) => {
     if ("isCategory" in item) {
-      return (
+      return isCollapsed ? null : (
         <div
           key={item.label}
           className="px-4 py-2 font-bold text-sm text-gray-600"
@@ -127,6 +147,26 @@ export function LeftSidebar() {
 
     const isActive = item.href === pathname;
     const isOpen = openSections[item.label];
+
+    const content = (
+      <div
+        className="flex items-center w-full"
+        style={{ paddingLeft: isCollapsed ? 0 : level * 12 }}
+      >
+        <item.icon className="h-4 w-4 mr-2" />
+        {!isCollapsed && (
+          <>
+            <span className="text-sm font-normal">{item.label}</span>
+            {item.children &&
+              (isOpen ? (
+                <ChevronDown className="h-4 w-4" />
+              ) : (
+                <ChevronRight className="h-4 w-4" />
+              ))}
+          </>
+        )}
+      </div>
+    );
 
     if (item.children) {
       return (
@@ -142,20 +182,18 @@ export function LeftSidebar() {
                 isActive ? "bg-[#F3F2F1] text-gray-900" : "text-gray-700"
               }`}
             >
-              <div
-                className="flex items-center w-full"
-                style={{ paddingLeft: level * 12 }}
-              >
-                <item.icon className="h-4 w-4 mr-2" />
-                <span className="flex-grow text-sm font-normal">
-                  {item.label}
-                </span>
-                {isOpen ? (
-                  <ChevronDown className="h-4 w-4" />
-                ) : (
-                  <ChevronRight className="h-4 w-4" />
-                )}
-              </div>
+              {isCollapsed ? (
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>{content}</TooltipTrigger>
+                    <TooltipContent side="right">
+                      <p>{item.label}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              ) : (
+                content
+              )}
             </Button>
           </CollapsibleTrigger>
           <CollapsibleContent>
@@ -173,13 +211,18 @@ export function LeftSidebar() {
             isActive ? "bg-[#F3F2F1] text-gray-900" : "text-gray-700"
           }`}
         >
-          <div
-            className="flex items-center w-full"
-            style={{ paddingLeft: level * 12 }}
-          >
-            <item.icon className="h-4 w-4 mr-2" />
-            <span className="text-sm font-normal">{item.label}</span>
-          </div>
+          {isCollapsed ? (
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>{content}</TooltipTrigger>
+                <TooltipContent side="right">
+                  <p>{item.label}</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          ) : (
+            content
+          )}
         </Button>
       </Link>
     );
@@ -188,26 +231,39 @@ export function LeftSidebar() {
   return (
     <div className="relative">
       {!showAgentSkillMenu ? (
-        <aside className="w-64 bg-[#F3F2F1] border-r border-gray-200 flex flex-col">
+        <aside
+          className={`bg-[#F3F2F1] border-r border-gray-200 flex flex-col h-screen transition-all duration-300 ${
+            isCollapsed ? "w-16" : "w-64"
+          }`}
+        >
           <div className="p-4 border-b border-gray-200">
-            <div
-              className="text-gray-700 hover:text-gray-900 cursor-pointer"
-              onClick={() => setShowAgentSkillMenu(true)}
-            >
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-              >
-                <path d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </div>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <div
+                    className="text-gray-700 hover:text-gray-900 cursor-pointer"
+                    onClick={() => setShowAgentSkillMenu(true)}
+                  >
+                    <svg
+                      className="h-6 w-6"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent side="right">
+                  <p>Agent Skill Menu</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
-          <ScrollArea className="flex-grow">
+          <ScrollArea className="">
             <div className="py-2">
               {navigationItems.map((item) => renderNavItem(item))}
             </div>

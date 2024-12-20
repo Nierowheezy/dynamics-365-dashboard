@@ -47,13 +47,13 @@ export function AgentSkillModal({ isOpen, onClose }: AgentSkillModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 p-4">
+    <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 p-4 overflow-y-auto">
       <div
         ref={modalRef}
-        className="bg-white rounded-xl w-full max-w-4xl max-h-[90vh] pt-14 pb-16 pl-2 pr-2 overflow-hidden shadow-xl"
+        className="bg-white rounded-xl w-full max-w-4xl max-h-[90vh] pt-14 pb-16 px-4 overflow-hidden shadow-xl"
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-6">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-6">
           <div className="flex items-center gap-2">
             <Image
               src="/copilot_image.png"
@@ -73,7 +73,7 @@ export function AgentSkillModal({ isOpen, onClose }: AgentSkillModalProps) {
         </div>
 
         {/* Content */}
-        <div className="px-6 pb-6">
+        <div className="px-6 pb-6 space-y-6">
           <div className="mb-8 bg-white rounded-lg border p-4 hover:shadow-md transition-shadow cursor-pointer">
             <h3 className="text-lg font-semibold mb-4">
               Check if on-hand inventory will allow all sales orders to ship
@@ -128,8 +128,8 @@ export function AgentSkillModal({ isOpen, onClose }: AgentSkillModalProps) {
               Allow the agent to access email inboxes to read mail from known
               vendors
             </p>
-            <div className="flex gap-2 items-center">
-              <div className="flex-1 relative">
+            <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center">
+              <div className="flex-1 relative w-full">
                 <div className="absolute left-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-purple-100 rounded-xl flex items-center justify-center">
                   P
                 </div>
@@ -143,14 +143,14 @@ export function AgentSkillModal({ isOpen, onClose }: AgentSkillModalProps) {
                   <X className="h-4 w-4 text-gray-400" />
                 </button>
               </div>
-              <Button className="bg-blue-600 hover:bg-blue-700">
+              <Button className="bg-blue-600 hover:bg-blue-700 w-full sm:w-auto">
                 Allow access
               </Button>
             </div>
           </div>
         </div>
         {/* Footer */}
-        <div className="flex justify-end gap-2 p-4 ">
+        <div className="flex justify-end gap-2 p-4 flex-wrap">
           <Button
             variant="outline"
             disabled

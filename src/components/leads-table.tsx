@@ -5,8 +5,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { ChevronDown, Search } from "lucide-react";
 import { Bar } from "react-chartjs-2"; // Assuming you're using chart.js
-import { Chart } from "chart.js";
 import {
+  Chart as ChartJS,
   CategoryScale,
   LinearScale,
   BarElement,
@@ -15,8 +15,14 @@ import {
   Legend,
 } from "chart.js";
 
-// Register the necessary components
-Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const leads = [
   {
@@ -112,10 +118,22 @@ export function LeadsTable() {
     ],
   };
 
+  const chartOptions = {
+    responsive: true,
+    scales: {
+      x: {
+        type: "category" as const,
+      },
+      y: {
+        beginAtZero: true,
+      },
+    },
+  };
+
   return (
-    <Card className="bg-white shadow-lg rounded-sm overflow-hidden">
+    <Card className="bg-white shadow-lg rounded-sm overflow-hidden w-full">
       <CardContent className="p-6">
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
           {/* Search */}
           <div className="relative">
             <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none">
@@ -123,8 +141,8 @@ export function LeadsTable() {
             </div>
             <input
               type="text"
-              placeholder="Sort, filter and search with Copilot"
-              className="w-96 pl-10 py-2 border rounded-md text-sm"
+              placeholder="Search..."
+              className="w-full sm:w-96 pl-10 py-2 border rounded-md text-sm"
               value={searchTerm}
               onChange={handleSearch}
             />
@@ -150,8 +168,8 @@ export function LeadsTable() {
 
         {/* Conditional Rendering for Views */}
         {currentView === "table" ? (
-          <div className="w-full overflow-auto">
-            <table className="w-full">
+          <div className="w-full overflow-x-auto">
+            <table className="w-full min-w-[600px]">
               <thead>
                 <tr className="border-b">
                   <th className="w-10 p-3">
@@ -224,8 +242,8 @@ export function LeadsTable() {
             </table>
           </div>
         ) : (
-          <div className="h-96">
-            <Bar data={chartData} options={{ responsive: true }} />
+          <div className="h-[50vh] md:h-96">
+            <Bar data={chartData} options={chartOptions} />
           </div>
         )}
       </CardContent>

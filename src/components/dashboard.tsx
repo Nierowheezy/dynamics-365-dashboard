@@ -82,7 +82,7 @@ export function Dashboard() {
               imageVal="/allan.png"
               icon={<CalendarDays className="h-5 w-5 mr-2 " />}
               color="#F4F5FD"
-              dealValue="$100,000"
+              dealValue="$100s,000"
               decisionMakerStatus="Yes"
               onClick={() =>
                 openModal({
@@ -97,7 +97,9 @@ export function Dashboard() {
                 })
               }
             />
-            <ActivityCard />
+            <div className="w-full md:col-span-2 lg:col-span-1">
+              <ActivityCard />
+            </div>
           </div>
         </Card>
         <LeadsTable />
