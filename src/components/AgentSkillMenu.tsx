@@ -17,6 +17,21 @@ const AgentSkillMenu = ({ onClose }: AgentSkillMenuProps) => {
   const [isClosing, setIsClosing] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
 
+  // Add the keydown event listener for the Escape key
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        handleClose(); // Close the menu when Escape is pressed
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   useEffect(() => {
     const handleResize = () => {
       setIsCollapsed(window.innerWidth < 1024);
@@ -94,7 +109,12 @@ const AgentSkillMenu = ({ onClose }: AgentSkillMenuProps) => {
                       {isCollapsed ? (
                         <Bot className="h-6 w-6 mx-auto" />
                       ) : (
-                        "Agent Skill"
+                        <>
+                          <div className="flex items-center">
+                            <Bot className="mr-2" />
+                            <h1>Agent Skill</h1>
+                          </div>
+                        </>
                       )}
                     </button>
                   </TooltipTrigger>
