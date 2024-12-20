@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 interface LeadCardProps {
   name: string;
@@ -11,6 +11,8 @@ interface LeadCardProps {
   onClick?: () => void; // Added onClick prop
   icon?: React.ReactNode;
   color?: string; // New color prop
+  dealValue?: string; // Additional field for deal value
+  decisionMakerStatus?: string; // Additional field for decision-maker status
 }
 
 export function LeadCard({
@@ -23,16 +25,20 @@ export function LeadCard({
   imageVal,
   icon,
   color,
+  dealValue,
+  decisionMakerStatus,
   onClick, // Destructure onClick prop
 }: LeadCardProps) {
-  console.log(color);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
-      className="bg-white rounded-lg border p-4 hover:shadow-md transition-shadow cursor-pointer"
+      className="relative bg-white rounded-lg border p-4 hover:shadow-md transition-shadow cursor-pointer"
       onClick={onClick} // Add onClick here
       role="button"
       tabIndex={0}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       {/* Header Section */}
       <div className="flex items-center gap-4 mb-4">
@@ -70,6 +76,16 @@ export function LeadCard({
           </React.Fragment>
         ))}
       </div>
+
+      {/* Tooltip */}
+      {isHovered && (
+        <div className="absolute top-0 left-full ml-4 w-48 bg-gray-800 text-white text-sm p-2 rounded shadow-lg z-10">
+          <p className="font-medium">Deal Value: {dealValue || "N/A"}</p>
+          <p className="font-medium">
+            Decision Maker: {decisionMakerStatus || "N/A"}
+          </p>
+        </div>
+      )}
     </div>
   );
 }
