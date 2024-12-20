@@ -1,14 +1,7 @@
 "use client";
 
 import React, { useEffect, ReactNode, useRef } from "react";
-import {
-  X,
-  ThumbsUp,
-  ThumbsDown,
-  Edit,
-  SendHorizontal,
-  Search,
-} from "lucide-react";
+import { X, ThumbsUp, ThumbsDown, Edit, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";

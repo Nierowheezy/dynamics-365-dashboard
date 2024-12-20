@@ -1,8 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Checkbox } from "@/components/ui/checkbox";
+import { Card } from "@/components/ui/card";
 // import { ChevronRight, ChevronUp, ChevronDown, Search } from "lucide-react";
 import { LeadsTable } from "@/components/leads-table";
 import { InsightCard } from "@/components/insight-card";

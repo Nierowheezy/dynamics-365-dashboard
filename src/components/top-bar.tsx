@@ -11,19 +11,9 @@ import {
   ChevronDown,
   Plus,
   RefreshCcw,
-  Users,
-  Filter,
-  ChevronRight,
-  Search,
   Trash2,
   MoreHorizontal,
-  Brain,
-  SlidersHorizontal,
-  Columns,
-  MessageSquare,
-  Share2,
 } from "lucide-react";
-import Image from "next/image";
 
 export function TopBar() {
   return (
