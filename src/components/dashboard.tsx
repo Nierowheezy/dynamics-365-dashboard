@@ -73,27 +73,27 @@ export function Dashboard() {
               }
             />
             <LeadCard
-              name="Jane Reyes"
-              role="COO"
-              company="Northwind Traders"
-              topic="Engage with Jane Reyes"
-              description="Jane may be interested in upgrading espresso machines for her in-store coffee shops."
-              tags={["Expand business", "High buying intent"]}
-              imageVal="/jane.jpg"
-              icon={<Mail className="h-5 w-5 mr-2 " />}
-              color="#F7F6FE"
-              dealValue="$50,000"
+              name="Allan Munger"
+              role="Head of Real Estate Development"
+              company="Contoso Coffee"
+              topic="Prepare for meeting with Allan"
+              description="Prepare for high-buying intent meeting Copilot scheduled for 2 PM regarding upgrading service contract."
+              tags={["Upcoming meeting", "Due today"]}
+              imageVal="/allan.png"
+              icon={<CalendarDays className="h-5 w-5 mr-2 " />}
+              color="#F4F5FD"
+              dealValue="$100,000"
               decisionMakerStatus="Yes"
               onClick={() =>
                 openModal({
-                  name: "Jane Reyes",
-                  role: "COO",
-                  company: "Northwind Traders",
-                  topic: "Engage with Jane Reyes",
+                  name: "Allan Munger",
+                  role: "Head of Real Estate Development",
+                  company: "Contoso Coffee",
+                  topic: "Prepare for meeting with Allan",
                   description:
-                    "Jane may be interested in upgrading espresso machines for her in-store coffee shops.",
-                  tags: ["Expand business", "High buying intent"],
-                  imageVal: "/jane.jpg",
+                    "Prepare for high-buying intent meeting Copilot scheduled for 2 PM regarding upgrading service contract.",
+                  tags: ["Upcoming meeting", "Due today"],
+                  imageVal: "/allan.png",
                 })
               }
             />
