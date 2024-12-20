@@ -162,7 +162,7 @@ export function Modal({ isOpen, onClose }: ModalProps) {
               <ul className="space-y-3 text-sm text-gray-700">
                 <li className="flex items-start gap-2">
                   <span className="text-xs bg-gray-100 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    1
+                    •
                   </span>
                   Jane is a
                   <span className="font-semibold">key decision maker</span> and
@@ -174,14 +174,14 @@ export function Modal({ isOpen, onClose }: ModalProps) {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-xs bg-gray-100 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    2
+                    •
                   </span>
                   Multiple people at her company have reported slowness during
                   <span className="font-semibold">service requests</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-xs bg-gray-100 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    3
+                    •
                   </span>
                   Northwind Traders currently see
                   <span className="font-semibold">$200M in revenue</span> from
