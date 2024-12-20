@@ -47,13 +47,13 @@ export function Modal({ isOpen, onClose }: ModalProps) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 p-4 overflow-y-auto">
+    <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 p-4">
       <div
         ref={modalRef}
         className="bg-white rounded-xl w-full max-w-5xl max-h-[90vh] overflow-hidden shadow-xl p-6"
       >
         {/* Header */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-6 bg-white rounded-xl ">
+        <div className="flex items-center justify-between p-6 bg-white rounded-xl ">
           <div className="flex items-center gap-2">
             <Image src="/email.png" alt="Agent Skill" width={30} height={30} />
             <h2 className="text-xl font-semibold">Engage with Jane Reyes</h2>
@@ -91,7 +91,7 @@ export function Modal({ isOpen, onClose }: ModalProps) {
         </div>
 
         {/* Action Banner */}
-        <div className="bg-[#F8F9FF] p-2 flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 rounded-xl border-t-0 border-x-0 shadow-sm">
+        <div className="bg-[#F8F9FF] p-2 flex items-center justify-between mb-8 rounded-xl border-t-0 border-x-0 shadow-sm">
           <div className="flex items-center gap-2 text-xs text-blue-700 ">
             <div className="w-5 h-5 rounded bg-blue-100 flex items-center justify-center">
               <Image
@@ -142,7 +142,7 @@ export function Modal({ isOpen, onClose }: ModalProps) {
           </TabsList>
         </Tabs>
         {/* Content */}
-        <div className="p-6 overflow-y-auto max-h-[calc(90vh-240px)] space-y-6">
+        <div className="p-6 overflow-y-auto max-h-[calc(90vh-240px)]">
           <div className="bg-white rounded-lg p-6 mb-6 border-t-0 border-x-0 shadow-md">
             <div className="bg-[#F8F9FF] rounded-lg p-6 mb-6 border-t-0 border-x-0 shadow-md">
               <div className="flex items-center justify-between mb-4">
@@ -189,7 +189,7 @@ export function Modal({ isOpen, onClose }: ModalProps) {
                 </li>
               </ul>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+              <div className="grid grid-cols-3 gap-4 mt-6">
                 <div className="bg-white rounded-lg p-4 border">
                   <div className="flex items-center gap-4 mb-1">
                     <div className="w-8 h-8 rounded-full bg-[#E5F5FF] flex items-center justify-center">
