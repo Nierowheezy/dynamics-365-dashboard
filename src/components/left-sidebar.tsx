@@ -62,7 +62,6 @@ const navigationItems: (NavItem | { label: string; isCategory: true })[] = [
   },
   { label: "My work", isCategory: true },
   { icon: Zap, label: "Sales accelerator", href: "/sales-accelerator" },
-  { icon: Zap, label: "Sales accelerator", href: "/sales-accelerator" },
   { icon: LayoutDashboard, label: "Dashboards", href: "/dashboards" },
   { icon: FileText, label: "Activities", href: "/activities" },
   { label: "Customers", isCategory: true },
