@@ -55,13 +55,7 @@ export function Modal({ isOpen, onClose }: ModalProps) {
         {/* Header */}
         <div className="flex items-center justify-between p-6 bg-white rounded-xl ">
           <div className="flex items-center gap-2">
-            <Image
-              src="/e-mail.png"
-              alt="Agent Skill"
-              width={24}
-              height={24}
-              className="rounded-sm"
-            />
+            <Image src="/email.png" alt="Agent Skill" width={30} height={30} />
             <h2 className="text-xl font-semibold">Engage with Jane Reyes</h2>
           </div>
           <button
@@ -76,12 +70,10 @@ export function Modal({ isOpen, onClose }: ModalProps) {
         <div className="p-4 flex justify-between items-start border-b mb-4 border-t-0 border-x-0 shadow-md rounded-xl">
           <div className="flex items-center gap-3">
             <div className="relative">
-              <Image
+              <img
                 src="/jane.jpg"
                 alt="Jane Reyes"
-                width={50}
-                height={50}
-                className="rounded-full"
+                className="w-12 h-12 rounded-full object-cover"
               />
               <div className="absolute -right-1 -bottom-1 bg-white rounded-full p-0.5">
                 <FaPhone />
@@ -99,7 +91,7 @@ export function Modal({ isOpen, onClose }: ModalProps) {
         </div>
 
         {/* Action Banner */}
-        <div className="bg-[#F8F9FF] p-2 flex items-center justify-between mb-4 rounded-xl border-t-0 border-x-0 shadow-sm">
+        <div className="bg-[#F8F9FF] p-2 flex items-center justify-between mb-8 rounded-xl border-t-0 border-x-0 shadow-sm">
           <div className="flex items-center gap-2 text-xs text-blue-700 ">
             <div className="w-5 h-5 rounded bg-blue-100 flex items-center justify-center">
               <Image
@@ -131,7 +123,7 @@ export function Modal({ isOpen, onClose }: ModalProps) {
         {/* Tabs */}
         <Tabs
           defaultValue="engage"
-          className="bg-white rounded-sm border-t-0 border-x-0 shadow-md"
+          className="bg-white rounded-sm border-t-0 border-x-0 shadow-md "
         >
           <TabsList className="px-6">
             <TabsTrigger
