@@ -7,13 +7,7 @@ import { RiBarChartBoxAiFill } from "react-icons/ri";
 import { BsFilter } from "react-icons/bs";
 import { TfiLayoutColumn4 } from "react-icons/tfi";
 import { FaShareSquare } from "react-icons/fa";
-import {
-  ChevronDown,
-  Plus,
-  RefreshCcw,
-  Trash2,
-  MoreHorizontal,
-} from "lucide-react";
+import { ChevronDown, Plus, RefreshCcw, Trash2 } from "lucide-react";
 import { AiOutlineMore } from "react-icons/ai";
 
 export function TopBar() {

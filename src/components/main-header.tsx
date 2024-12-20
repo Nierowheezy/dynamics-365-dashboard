@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Bell, Settings, HelpCircle, Repeat, Plus, Grid } from "lucide-react";
+import { Bell, Settings, Plus } from "lucide-react";
 import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import { LuUserRound } from "react-icons/lu";
 import { RiQuestionMark } from "react-icons/ri";
