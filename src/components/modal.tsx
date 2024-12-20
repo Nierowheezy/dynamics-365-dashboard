@@ -55,7 +55,7 @@ export function Modal({ isOpen, onClose }: ModalProps) {
         {/* Header */}
         <div className="flex items-center justify-between p-6 bg-white rounded-xl ">
           <div className="flex items-center gap-2">
-            <Image src="/email.png" alt="Agent Skill" width={30} height={30} />
+            <Image src="/mail.png" alt="mail" width={30} height={30} />
             <h2 className="text-xl font-semibold">Engage with Jane Reyes</h2>
           </div>
           <button
