@@ -294,7 +294,7 @@ export function Modal({ isOpen, onClose }: ModalProps) {
             </p>
           </div>
 
-          <div className="space-y-4 mb-24 flex  items-center justify-between">
+          <div className="space-y-4 mb-32 flex  items-center justify-between">
             <div className="flex items-center gap-2">
               <span className="text-sm text-gray-500">Showing 1 of 9</span>
               <Separator orientation="vertical" className="h-6" />
