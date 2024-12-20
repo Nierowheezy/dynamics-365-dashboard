@@ -14,6 +14,7 @@ import {
   Trash2,
   MoreHorizontal,
 } from "lucide-react";
+import { AiOutlineMore } from "react-icons/ai";
 
 export function TopBar() {
   return (
@@ -55,7 +56,7 @@ export function TopBar() {
               <ChevronDown className="h-4 w-4 text-gray-500" />
             </Button>
             <Button variant="ghost" size="icon" className="h-8 w-8">
-              <MoreHorizontal className="h-4 w-4" />
+              <AiOutlineMore className="h-4 w-4" />
             </Button>
             <Button variant="ghost" size="sm" className="text-xs">
               <AiOutlinePieChart className="mr-2 h-4 w-4" />
