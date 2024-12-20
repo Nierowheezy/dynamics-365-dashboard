@@ -33,6 +33,7 @@ import {
   Rocket,
   PieChart,
 } from "lucide-react";
+import AgentSkillMenu from "./AgentSkillMenu";
 
 interface NavItem {
   icon: React.ElementType;
@@ -60,6 +61,7 @@ const navigationItems: (NavItem | { label: string; isCategory: true })[] = [
     ],
   },
   { label: "My work", isCategory: true },
+  { icon: Zap, label: "Sales accelerator", href: "/sales-accelerator" },
   { icon: Zap, label: "Sales accelerator", href: "/sales-accelerator" },
   { icon: LayoutDashboard, label: "Dashboards", href: "/dashboards" },
   { icon: FileText, label: "Activities", href: "/activities" },
@@ -100,6 +102,7 @@ const navigationItems: (NavItem | { label: string; isCategory: true })[] = [
 export function LeftSidebar() {
   const pathname = usePathname();
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({});
+  const [showAgentSkillMenu, setShowAgentSkillMenu] = useState(false);
 
   const toggleSection = (label: string) => {
     setOpenSections((prev) => ({
@@ -184,27 +187,36 @@ export function LeftSidebar() {
   };
 
   return (
-    <aside className="w-64 bg-[#F3F2F1] border-r border-gray-200 flex flex-col">
-      <div className="p-4 border-b border-gray-200">
-        <button className="text-gray-700 hover:text-gray-900">
-          <svg
-            className="h-6 w-6"
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <path d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-      <ScrollArea className="flex-grow">
-        <div className="py-2">
-          {navigationItems.map((item) => renderNavItem(item))}
-        </div>
-      </ScrollArea>
-    </aside>
+    <div className="relative">
+      {!showAgentSkillMenu ? (
+        <aside className="w-64 bg-[#F3F2F1] border-r border-gray-200 flex flex-col">
+          <div className="p-4 border-b border-gray-200">
+            <div
+              className="text-gray-700 hover:text-gray-900 cursor-pointer"
+              onClick={() => setShowAgentSkillMenu(true)}
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </div>
+          </div>
+          <ScrollArea className="flex-grow">
+            <div className="py-2">
+              {navigationItems.map((item) => renderNavItem(item))}
+            </div>
+          </ScrollArea>
+        </aside>
+      ) : (
+        <AgentSkillMenu onClose={() => setShowAgentSkillMenu(false)} />
+      )}
+    </div>
   );
 }

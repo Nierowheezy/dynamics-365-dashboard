@@ -95,9 +95,9 @@ export function LeadsTable() {
             <Search className="h-4 w-4 text-gray-400" />
           </div>
           {/* Copilot Icon */}
-          <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
-            <img src="/placeholder.svg" alt="Copilot" className="h-4 w-4" />
-          </div>
+          {/* <div className="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+            <img src="/copilot_image.png" alt="Copilot" className="h-4 w-4" />
+          </div> */}
           {/* Input Field */}
           <input
             type="text"
