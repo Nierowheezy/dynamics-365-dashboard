@@ -176,7 +176,7 @@ export function Modal({ isOpen, onClose }: ModalProps) {
                   <span className="font-semibold">key decision maker</span> and
                   was browsing
                   <span className="font-semibold">
-                    '&apos;espresso machines&apos;'
+                    espresso machines&apos;
                   </span>{" "}
                   on First Coffee&apos;s website.
                 </li>
@@ -184,8 +184,7 @@ export function Modal({ isOpen, onClose }: ModalProps) {
                   <span className="text-xs bg-gray-100 rounded-full w-5 h-5 flex items-center justify-center flex-shrink-0 mt-0.5">
                     2
                   </span>
-                  Multiple people at her company have reported
-                  '&apos;slowness&apos;' during
+                  Multiple people at her company have reported slowness during
                   <span className="font-semibold">service requests</span>
                 </li>
                 <li className="flex items-start gap-2">
@@ -265,12 +264,16 @@ export function Modal({ isOpen, onClose }: ModalProps) {
                     height={20}
                   />
                 </span>
-                <span className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-sm text-xs">
-                  <span>1</span>
-                </span>
-                <Separator orientation="vertical" className="h-6" />
-                <span>D365 Sales2</span>
-                <span className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-sm text-xs">
+                <div className="bg-gray-100 rounded-sm text-xs flex items-center">
+                  <span className="flex items-center gap-1 bg-gray-100 px-2 py-1 rounded-sm text-xs">
+                    <span>1</span>
+                  </span>
+                  <Separator orientation="vertical" className="h-6" />
+                  <span className="bg-gray-100 p-2 rounded-sm text-xs">
+                    D365 Sales2
+                  </span>
+                </div>
+                <span className="flex items-center gap-1 bg-gray-100 px-2 py-2 rounded-sm text-xs">
                   <span>+2</span>
                 </span>
               </div>
@@ -291,11 +294,11 @@ export function Modal({ isOpen, onClose }: ModalProps) {
               Jane Reyes, the Chief Operating Officer of Northwind Traders, is a
               dynamic leader with a proven track record in optimizing operations
               and enhancing customer experiences. Under her guidance, Northwind
-              Traders&apos;' in-store coffee shops have flourished, becoming a
-              hallmark of quality and innovation. Jane&apos;'s commitment to
-              excellence makes her an ideal partner for First Coffee. She is
-              always seeking top-tier equipment to elevate her coffee shops'
-              offerings, ensuring consistent, high-quality service.
+              Traders in store coffee shops have flourished, becoming a hallmark
+              of quality and innovation. Janes commitment to excellence makes
+              her an ideal partner for First Coffee. She is always seeking top
+              tier equipment to elevate her coffee shops offerings, ensuring
+              consistent, high-quality service.
             </p>
           </div>
 
