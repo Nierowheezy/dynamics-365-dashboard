@@ -30,11 +30,11 @@ export function TopBar() {
               Show chart
             </Button>
             <Button variant="ghost" size="sm" className="text-xs">
-              <AiOutlineBars className="mr-2 h-4 w-4" />
+              <AiOutlineBars className="mr-2 h-4 w-4 text-blue-600" />
               Focused view
             </Button>
             <Button variant="ghost" size="sm" className="text-xs">
-              <Plus className="mr-2 h-4 w-4" />
+              <Plus className="mr-2 h-4 w-4 text-green-500" />
               New
             </Button>
             <Button variant="ghost" size="sm" className="text-xs">
@@ -43,7 +43,7 @@ export function TopBar() {
             </Button>
 
             <Button variant="ghost" size="sm" className="text-xs">
-              <BsMicrosoftTeams />
+              <BsMicrosoftTeams className="mr-2 h-4 w-4 text-blue-600" />
               Collaborate
             </Button>
             <Button variant="ghost" size="sm" className="text-xs">

@@ -1,17 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Bell, Settings, HelpCircle, Repeat, Plus, Grid } from "lucide-react";
+import { BsFillGrid3X3GapFill } from "react-icons/bs";
+import { LuUserRound } from "react-icons/lu";
+import { RiQuestionMark } from "react-icons/ri";
 
 export function MainHeader() {
   return (
-    <header className="bg-[#11100f] text-white h-12 flex items-center px-4 justify-between">
+    <header className="bg-[#03112C] text-white h-12 flex items-center px-4 justify-between">
       <div className="flex items-center space-x-2">
-        <Button
-          variant="ghost"
-          size="icon"
-          className="text-white hover:bg-white/10"
-        >
-          <Grid className="h-5 w-5" />
-        </Button>
+        <BsFillGrid3X3GapFill className="cursor-pointer" />
+
         <div className="flex items-center space-x-1">
           <span className="text-sm font-semibold">Dynamics 365</span>
           <span className="text-gray-400">|</span>
@@ -45,14 +43,14 @@ export function MainHeader() {
           size="icon"
           className="text-white hover:bg-white/10"
         >
-          <HelpCircle className="h-5 w-5" />
+          <RiQuestionMark className="h-5 w-5" />
         </Button>
         <Button
           variant="ghost"
           size="icon"
           className="text-white hover:bg-white/10"
         >
-          <Repeat className="h-5 w-5" />
+          <LuUserRound className="h-5 w-5" />
         </Button>
         <Button
           variant="ghost"
